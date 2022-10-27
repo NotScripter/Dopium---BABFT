@@ -1,0 +1,161 @@
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+Name = "Sirius | Rayfield Build A Boat for Treasure",
+LoadingTitle = "Rayfield",
+LoadingSubtitle = "by Sirius",
+KeySystem = false, -- Set this to true to use our key system
+KeySettings = {
+	Title = "Sirius | Rayfield Key System.",
+	Subtitle = "Key System | Rayfield",
+	Note = "BABFT (discord.gg/sirius)",
+	Key = "sirius"
+}
+})
+
+
+
+-- Tabs
+local TabHome = Window:CreateTab("Home")
+local TabFeatures = Window:CreateTab("Features")
+local TabOther = Window:CreateTab("Other")  
+
+-- Sections
+local Section = TabHome:CreateSection("Info")
+local Section = TabFeatures:CreateSection("Basic;")
+local Section33234234 = TabOther:CreateSection("Other Scripts")
+
+-- Labels
+local WLabel = TabHome:CreateLabel("One of the Best BABFT Scripts for free!")
+local WLabel = TabHome:CreateLabel("We offer less features as of right now, as we are still in beta!")
+local Section33 = TabHome:CreateSection("External")
+local Button = TabHome:CreateButton({
+	Name = "Copy Discord Server Link",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+		Rayfield:Notify("Copied!","Discord server link has been copied to the Clipboard!")
+	end,
+})
+
+
+-- Sliders
+local Slider = TabFeatures:CreateSlider({
+    Name = "WalkSpeed Slider",
+    Range = {16, 150},
+    Increment = 10,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Callback = function(Value)
+          game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end,
+})
+local Slider2 = TabFeatures:CreateSlider({
+    Name = "JumpPower Slider",
+    Range = {50, 150},
+    Increment = 10,
+    Suffix = "Power",
+    CurrentValue = 50,
+    Callback = function(Value)
+          game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end,
+})
+
+
+local Section66 = TabFeatures:CreateSection("Advanced;")
+local Button = TabFeatures:CreateButton({
+	Name = "Auto-Farm",
+	Callback = function()
+		
+    -- Preperation
+    spawn(function()
+        while true do
+    workspace.CamoZone.VoteLaunchRE:FireServer()
+    local TS = game:GetService("TweenService")
+    game.Workspace.Gravity = 0
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-64, 26, -183)
+    
+    -- Informations 
+    local InformationLong = TweenInfo.new(
+        40, -- Time
+        Enum.EasingStyle.Linear, -- EasingStyle
+        Enum.EasingDirection.Out, -- EasingDirection
+        0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+        false, -- Reverses (tween will reverse once reaching it's goal)
+        0 -- DelayTime
+    )
+    local InformationShort = TweenInfo.new(
+        5, -- Time
+        Enum.EasingStyle.Linear, -- EasingStyle
+        Enum.EasingDirection.Out, -- EasingDirection
+        0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+        false, -- Reverses (tween will reverse once reaching it's goal)
+        0 -- DelayTime
+    )
+    
+    -- Tweens
+    local TweenBegin = TS:Create(game.Players.LocalPlayer.Character.PrimaryPart, InformationLong, {CFrame = CFrame.new(Vector3.new(-45, 77, 8547))})
+    local TweenEnd = TS:Create(game.Players.LocalPlayer.Character.PrimaryPart, InformationShort, {CFrame = CFrame.new(Vector3.new(-56, -360, 9489))})
+     
+    -- Playing
+    TweenBegin:Play()
+    task.wait(40)
+    TweenEnd:Play()
+    task.wait(5)
+    workspace.ClaimRiverResultsGold:FireServer()
+task.wait(10)
+end
+end)
+
+	end,
+})
+
+local Paragraph = TabFeatures:CreateParagraph({Title = "Information About Auto-Farm", Content = "The Auto-Farm might disable every few minutes. If that happens, just click it again!"})
+
+local Button = TabFeatures:CreateButton({
+	Name = "Auto-Collect Event Chests",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+	end,
+})
+local Paragraph = TabFeatures:CreateParagraph({Title = "Information About Collection", Content = "This feature works for christmas, and spring chests! Any other chest/event egg is not supported in this Beta! (4)"})
+
+local Button = TabOther:CreateButton({
+	Name = "DEX",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+	end,
+})
+local Button = TabOther:CreateButton({
+	Name = "CMD-X",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+	end,
+})
+local Button = TabOther:CreateButton({
+	Name = "INF-YIELD",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+	end,
+})
+local Button = TabOther:CreateButton({
+	Name = "DOMAIN-X",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+	end,
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
